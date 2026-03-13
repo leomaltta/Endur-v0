@@ -36,6 +36,13 @@ public class AthleteDiscipline extends CreatedEntity {
     protected AthleteDiscipline() {
     }
 
+    public static AthleteDiscipline of(AthleteProfile athleteProfile, DisciplineType discipline) {
+        AthleteDiscipline athleteDiscipline = new AthleteDiscipline();
+        athleteDiscipline.setAthleteProfile(athleteProfile);
+        athleteDiscipline.setDiscipline(discipline);
+        return athleteDiscipline;
+    }
+
     public AthleteProfile getAthleteProfile() {
         return athleteProfile;
     }

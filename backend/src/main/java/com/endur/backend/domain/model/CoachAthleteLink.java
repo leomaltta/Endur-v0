@@ -46,6 +46,22 @@ public class CoachAthleteLink extends BaseEntity {
     protected CoachAthleteLink() {
     }
 
+    public static CoachAthleteLink newActivePrimary(
+            CoachProfile coachProfile,
+            AthleteProfile athleteProfile,
+            LocalDate startDate,
+            String notes
+    ) {
+        CoachAthleteLink link = new CoachAthleteLink();
+        link.setCoachProfile(coachProfile);
+        link.setAthleteProfile(athleteProfile);
+        link.setStatus(CoachAthleteStatus.ACTIVE);
+        link.setPrimary(true);
+        link.setStartDate(startDate);
+        link.setNotes(notes);
+        return link;
+    }
+
     public CoachProfile getCoachProfile() {
         return coachProfile;
     }
